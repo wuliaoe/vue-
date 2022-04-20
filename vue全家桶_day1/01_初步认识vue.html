@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../vue自学第一天/js/vue.js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>自学：{{name.toUpperCase()}},{{address}},{{Date.now()}}</h1>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        //重点：容器和vue实例一一对应
+        new Vue({    //1.定义一个vue实例
+            el: '#root', //2.用el选定vue实例为哪个容器服务
+            data: {
+                name: 'vue the first day'
+            }
+        });
+    </script>
+</body>
+
+</html>
