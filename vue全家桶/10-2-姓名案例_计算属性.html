@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-计算属性</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        姓: <input type="text" v-model="firstname"> <br />
+        名: <input type="text" v-model="lastname"> <br />
+        全名：<span>{{fullshow}}</span>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#box',
+            data: {
+                firstname: '张',
+                lastname: '三'
+            },
+            computed: {
+                fullshow: {
+                    get() {
+                        // 当有人读取fullshow的时候，get就会被调用
+                        // get被调用的两种时候，1.初次调用时 2.所需要(依赖)的数据改变时调用
+                        console.log('调用了get');
+                        return this.firstname + '-' + this.lastname;
+                    },
+                    // set不是每次都会出现，只有fullshow被修改时会被调用    
+                    set(value) {
+                        console.log('调用了set');
+                        const srr = value.split('-');
+                        this.firstname = srr[0];
+                        this.lastname = srr[1];
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
