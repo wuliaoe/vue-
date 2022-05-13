@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" placeholder="请输入内容" @keyup="dnf">
+    </div>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+            },
+            methods: {
+                dnf(e) {
+                    // console.log(e.keyCode); //输出按键编码
+                    console.log("输出按键名字：" + e.key + '\n输出按键编码:' + e.keyCode);
+
+                    // if (e.keyCode != 13) return;
+                    // console.log("输出的值" + e.target.value);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div>{{name}}</div>
+    </div>
+    <script>
+        //el的两种写法
+        /*const a = new Vue({
+            //el第一种写法
+            // el: '.box',
+            data: {
+                name: '你好财富自由',
+            },
+        })
+        // el第二种写法
+        a.$mount('.box'); */
+
+        //data的两种写法
+        new Vue({
+            el: '.box',
+            //data 的第一种写法 对象
+            // data: {
+            //     name: '你好财富自由',
+            // },
+            data() {
+                console.log('this指向', this); //这里的this指向的是vue对象
+                return {
+                    name: '你好月入过万',
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

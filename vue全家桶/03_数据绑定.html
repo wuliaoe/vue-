@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据绑定</title>
+    <script src="../vue全家桶_day1/js/vue.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 普通写法 -->
+        <!-- 单项数据绑定： <input type="text" v-bind:value="name">
+        双项数据绑定： <input type="text" v-model:value="name"> -->
+        <!-- 简写 -->
+        单项数据绑定： <input type="text" :value="name">
+        <!-- 由于v-mode 默认收集的就是value 所以这里简写直接省略value -->
+        双项数据绑定： <input type="text" v-model="name">
+
+        <!-- 双向绑定一般只适用于表单类型的元素上   以下标签不支持-->
+        <!-- <h2 v-model="name">h2</h2> -->
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el: '.box',
+            data: {
+                name: '年薪百万',
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
